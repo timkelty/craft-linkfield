@@ -71,7 +71,9 @@ class CraftQLListener {
     $link->resolve(function($link, $args) {
         return $link instanceof Link ? (string) $link->getLink($args['text'] ?? null) : '';
     });
-
+    
+    $object->addBooleanField('allowCustomText');
+    $object->addBooleanField('allowTarget');
     $object->addStringField('customText');
     $object->addStringField('defaultText');
     $object->addStringField('target');
